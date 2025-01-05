@@ -12,13 +12,18 @@ public class Car {
     public void isOn() {
         int haveFuel = checkFuel();
         int haveOil = checkEngine();
+        boolean battery =  checkBattery();
        if( haveFuel <= 0 ){
-           on = false;
+
            System.out.println("It’s impossible to start the car without fuel.");
 
        } else if (haveOil <= 0) {
-           on = false;
+
            System.out.println("It’s impossible to start the car without Oil.");
+
+       } else if (!battery) {
+
+           System.out.println("Weak battery");
        } else{
            on = true;
            System.out.println("Vruuuum");
@@ -78,5 +83,10 @@ public void setOil(int oilNew){
             System.out.println("Oil temperature: 34ºC ");
         }
 
+}
+
+private boolean checkBattery(){
+    boolean batteryHealth = false;
+    return batteryHealth;
 }
 }
