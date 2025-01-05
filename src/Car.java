@@ -5,6 +5,7 @@ public class Car {
     boolean on = false;
     int fuel;
     int oil;
+    int tires = 20;
 
     /**
      *  Turn On the car !
@@ -85,8 +86,27 @@ public void setOil(int oilNew){
 
 }
 
+
+    /**
+     *  Private method that checks the car's Battery.
+     *
+     */
 private boolean checkBattery(){
-    boolean batteryHealth = false;
-    return batteryHealth;
+    return false;
+}
+
+    /**
+     *   method that checks the car's Tires.
+     *
+     */
+
+public int TiresInflated(int inflated){
+    tires = inflated;
+    if(tires <= 20 ){
+        System.out.println("My tires are low and need to be inflated.");
+    } else if (tires >=40) {
+        System.out.println("Excessive tire pressure can increase the risk of a tire blowout.");
+    }
+    return tires;
 }
 }
