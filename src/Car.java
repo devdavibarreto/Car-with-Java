@@ -11,16 +11,20 @@ public class Car {
      */
     public void isOn() {
         int haveFuel = checkFuel();
-       if( haveFuel <= 0){
+        int haveOil = checkEngine();
+       if( haveFuel <= 0 ){
            on = false;
            System.out.println("It’s impossible to start the car without fuel.");
 
-       }else{
+       } else if (haveOil <= 0) {
+           on = false;
+           System.out.println("It’s impossible to start the car without Oil.");
+       } else{
            on = true;
-           System.out.println("Vruuuuum");
+           System.out.println("Vruuuum");
            System.out.println("The car is On now");
        }
-        checkEngine();
+
     }
 
     /**
@@ -49,12 +53,21 @@ public class Car {
     }
 
 
-private void checkEngine(){
+    /**
+     *  Private method that checks the car's Oil.
+     *
+     */
+private int checkEngine(){
 String CheckOil = oil <= 2?"The oil level is low " : "Oil temperature: 34ºC ";
 
     System.out.println(CheckOil);
+    return oil;
 }
 
+    /**
+     *  Set Oil in the car !
+     * Max: 3
+     */
 public void setOil(int oilNew){
         if (oilNew > 3){
             System.out.println("Quantity above the allowed limit.");
